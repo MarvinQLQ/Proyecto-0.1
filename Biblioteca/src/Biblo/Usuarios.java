@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Usuarios extends javax.swing.JFrame {
 
-public   ArrayList<RUser> User=new ArrayList<RUser>();
+public static   ArrayList<RUser> User=new ArrayList<RUser>();
     
     public Usuarios() {
         initComponents();
@@ -35,9 +35,9 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txNombre = new javax.swing.JTextField();
+        txuser = new javax.swing.JTextField();
         txDocumento = new javax.swing.JTextField();
-        txCorreo = new javax.swing.JTextField();
+        txpass = new javax.swing.JTextField();
         VER = new javax.swing.JPanel();
         BT_Registrar = new javax.swing.JButton();
         BT_Volver = new javax.swing.JButton();
@@ -64,8 +64,8 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nombre y Apellido");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, 30));
+        jLabel4.setText("Usuario");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -74,11 +74,17 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Correo Electronico");
+        jLabel7.setText("Contraseña");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 120, -1));
-        getContentPane().add(txNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 210, 30));
+
+        txuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txuserActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 210, 30));
         getContentPane().add(txDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 150, 30));
-        getContentPane().add(txCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 180, 30));
+        getContentPane().add(txpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 180, 30));
 
         VER.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -135,6 +141,8 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Estado");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 30));
+
+        txEstado.setText("normal");
         getContentPane().add(txEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 120, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Next_page_64px_1_1.png"))); // NOI18N
@@ -169,7 +177,14 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
 
     private void BT_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_RegistrarActionPerformed
         
-        User.add(new RUser(txNombre.getText(),txDocumento.getText(),txCorreo.getText(),txEstado.getText()));
+        User.add(new RUser(txuser.getText(),txDocumento.getText(),txpass.getText(),txEstado.getText()));
+        System.out.println(User.get(0).Nombre);
+        System.out.println(User.get(0).Correo);
+        
+        txuser.setText("");
+        txDocumento.setText("");
+        txpass.setText("");
+        txEstado.setText("");
         
     }//GEN-LAST:event_BT_RegistrarActionPerformed
 
@@ -178,6 +193,10 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
         C.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txuserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,9 +247,9 @@ public   ArrayList<RUser> User=new ArrayList<RUser>();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField txCorreo;
     private javax.swing.JTextField txDocumento;
     private javax.swing.JTextField txEstado;
-    private javax.swing.JTextField txNombre;
+    private javax.swing.JTextField txpass;
+    private javax.swing.JTextField txuser;
     // End of variables declaration//GEN-END:variables
 }

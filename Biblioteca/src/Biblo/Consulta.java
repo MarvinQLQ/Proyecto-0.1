@@ -9,16 +9,23 @@ package Biblo;
  *
  * @author usuario
  */
+import static Biblo.Usuarios.User;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class Consulta extends javax.swing.JFrame {
-
+private String Usuario,Password;
     /**
      * Creates new form Consulta
      */
     public Consulta() {
         initComponents();
         setLocationRelativeTo(null);
+        Txuser.setFocusable(true);
     }
-
+public void Datos(String us, String pass){
+    Usuario = "Marvin";
+    Password = "123";
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,8 +36,8 @@ public class Consulta extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        Txuser = new javax.swing.JTextField();
+        Txpass = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -40,33 +47,34 @@ public class Consulta extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        BT_Entrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jTextField3.setText("jTextField3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 140, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 140, 30));
+        getContentPane().add(Txuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 140, 30));
+        getContentPane().add(Txpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 140, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Gulim", 1, 14)); // NOI18N
         jLabel2.setText("Username :");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 90, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 90, 40));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Gulim", 1, 14)); // NOI18N
         jLabel3.setText("Password :");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 90, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 90, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconsneg.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_customer_32px_1_1.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 30, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 30, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Key_32px (1).png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 30, 30));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 30, 30));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/xnombre.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -75,7 +83,7 @@ public class Consulta extends javax.swing.JFrame {
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Multiply_32px.png"))); // NOI18N
         jButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Multiply_32px.png"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 40, 50));
 
         jButton2.setFont(new java.awt.Font("Gulim", 1, 10)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,7 +97,7 @@ public class Consulta extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, -1, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, 30));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flchneg.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -121,7 +129,19 @@ public class Consulta extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 30, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 50, 40));
+
+        BT_Entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Enter_ON.png"))); // NOI18N
+        BT_Entrar.setBorder(null);
+        BT_Entrar.setBorderPainted(false);
+        BT_Entrar.setContentAreaFilled(false);
+        BT_Entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BT_Entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BT_EntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BT_Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Germany_Berlin_Brandenburg_Gate_Clouds_Town_square_514828_2560x1440.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 270));
@@ -148,6 +168,32 @@ public class Consulta extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void BT_EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_EntrarActionPerformed
+
+        for (int i = 0; i < User.size(); i++) {
+            
+            if(User.get(i).Nombre.equals(Txuser.getText()) && User.get(i).Correo.equals(Txpass.getText())){
+                
+                Canje C= new Canje();
+                C.setVisible(true);
+                this.setVisible(false);
+                
+            }else {
+                     JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrecta");
+                 }
+                         
+            
+            
+        }
+        
+          
+              
+          
+              
+      
+           
+    }//GEN-LAST:event_BT_EntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +231,9 @@ public class Consulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BT_Entrar;
+    private javax.swing.JTextField Txpass;
+    private javax.swing.JTextField Txuser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -195,8 +244,6 @@ public class Consulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
